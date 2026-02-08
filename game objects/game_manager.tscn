@@ -9,7 +9,6 @@ script = ExtResource("1_5vyem")
 sound = NodePath("SoundSystem")
 points = NodePath("PointSystem")
 
-[node name="SoundSystem" parent="." unique_id=1675318178 node_paths=PackedStringArray("game_manager") instance=ExtResource("3_76e68")]
-game_manager = NodePath("..")
-
 [node name="PointSystem" parent="." unique_id=711780399 instance=ExtResource("3_17rfg")]
+
+[node name="SoundSystem" parent="." unique_id=1675318178 instance=ExtResource("3_76e68")]
