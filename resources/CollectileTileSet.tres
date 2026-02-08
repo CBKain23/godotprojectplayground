@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" format=3 uid="uid://spa4o6qc6kci"]
+
+[ext_resource type="PackedScene" uid="uid://k1bujw4r58y7" path="res://game objects/coin.tscn" id="1_iivcq"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m02ir"]
+resource_name = "coin"
+scenes/1/scene = ExtResource("1_iivcq")
+
+[resource]
+tile_size = Vector2i(70, 70)
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetScenesCollectionSource_m02ir")

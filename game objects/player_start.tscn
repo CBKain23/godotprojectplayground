@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://804sicybd1yq"]
+
+[ext_resource type="Script" uid="uid://dapikix8mtgnt" path="res://scripts/player_start.gd" id="1_7cpyi"]
+[ext_resource type="Texture2D" uid="uid://hnvxa504bmo0" path="res://images/icon.svg" id="2_mi072"]
+
+[node name="PlayerStart" type="Node2D" unique_id=291030381]
+script = ExtResource("1_7cpyi")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=475665250]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mi072")
+
+[node name="SpawnLocation" type="Marker2D" parent="." unique_id=1995210821]
+unique_name_in_owner = true

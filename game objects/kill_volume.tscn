@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d1b3y7mgwc68b"]
+
+[ext_resource type="Script" uid="uid://bcndx8mkdvqwl" path="res://scripts/kill_volume.gd" id="1_bi5ku"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3wxvd"]
+
+[node name="KillVolume" type="Node2D" unique_id=1180604423]
+script = ExtResource("1_bi5ku")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1893213105]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1521698541]
+shape = SubResource("WorldBoundaryShape2D_3wxvd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

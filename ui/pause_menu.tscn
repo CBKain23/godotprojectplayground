@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dl6bp7jhwompc"]
+
+[ext_resource type="Script" uid="uid://bk4vgf54hp35o" path="res://scripts/pause_menu.gd" id="1_50142"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_euhrg"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1503117782]
+process_mode = 2
+script = ExtResource("1_50142")
+
+[node name="Main" type="Control" parent="." unique_id=1163984790]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseText" type="Label" parent="Main" unique_id=1450314272]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 56.0
+offset_right = 78.0
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_euhrg")
+
+[node name="ResumeButton" type="Button" parent="Main" unique_id=1409218749]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -68.0
+offset_right = 102.70972
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"

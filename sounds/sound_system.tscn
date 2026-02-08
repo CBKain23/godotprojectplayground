@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ckg5dsigg8bue"]
+
+[ext_resource type="Script" uid="uid://btlfptqyrr0qp" path="res://scripts/sound_system.gd" id="1_0qqfr"]
+[ext_resource type="AudioStream" uid="uid://d2ks5ipt2hy26" path="res://sounds/pickup5.ogg" id="2_e7dul"]
+[ext_resource type="AudioStream" uid="uid://b6pt8ss5h8ql6" path="res://sounds/win.ogg" id="3_oxlne"]
+[ext_resource type="AudioStream" uid="uid://cfh7w5yr8pu5" path="res://sounds/jump1.ogg" id="4_r1e86"]
+
+[node name="SoundSystem" type="Node" unique_id=1675318178 node_paths=PackedStringArray("coin", "win", "jump")]
+script = ExtResource("1_0qqfr")
+coin = NodePath("CoinPickUpSFX")
+win = NodePath("WinSFX")
+jump = NodePath("JumpSFX")
+
+[node name="CoinPickUpSFX" type="AudioStreamPlayer" parent="." unique_id=400451112]
+stream = ExtResource("2_e7dul")
+volume_db = -20.0
+pitch_scale = 2.0
+
+[node name="WinSFX" type="AudioStreamPlayer" parent="." unique_id=1593080481]
+stream = ExtResource("3_oxlne")
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=2040772935]
+stream = ExtResource("4_r1e86")
+volume_db = -15.0

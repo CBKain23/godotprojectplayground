@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bbeabhcoulgha"]
+
+[ext_resource type="Script" uid="uid://dblv6qgfbfout" path="res://scripts/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="PackedScene" uid="uid://cni1y5uyx8mki" path="res://game objects/game_manager.tscn" id="3_wk0pr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
+font_size = 45
+outline_size = 19
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1066006091 node_paths=PackedStringArray("manager")]
+script = ExtResource("1_t7e0r")
+manager = NodePath("GameManager")
+
+[node name="MainControl" type="Control" parent="." unique_id=1976934822]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleText" type="Label" parent="MainControl" unique_id=373506955]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 80.0
+offset_right = 126.0
+offset_bottom = 129.0
+grow_horizontal = 2
+text = "2D Platformer"
+label_settings = SubResource("LabelSettings_gl0q7")
+
+[node name="StartGame" type="Button" parent="MainControl" unique_id=1261328497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -108.0
+offset_right = 96.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="GameManager" parent="." unique_id=1030829118 instance=ExtResource("3_wk0pr")]
+
+[connection signal="pressed" from="MainControl/StartGame" to="." method="_on_start_game_pressed"]

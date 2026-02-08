@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://1g074344nc3p"]
+
+[ext_resource type="Script" uid="uid://cethee0j5cu0k" path="res://scripts/character.gd" id="1_ce4cu"]
+[ext_resource type="Texture2D" uid="uid://dg0yrpv624n7t" path="res://images/adventurer/adventurer_fall.png" id="2_rkjbx"]
+[ext_resource type="Texture2D" uid="uid://cvlditu43wcec" path="res://images/adventurer/adventurer_idle.png" id="3_vbq64"]
+[ext_resource type="Texture2D" uid="uid://dntdolxowiovt" path="res://images/adventurer/adventurer_jump.png" id="4_dktyg"]
+[ext_resource type="Texture2D" uid="uid://bict0r3cia51v" path="res://images/adventurer/adventurer_walk1.png" id="5_vfchb"]
+[ext_resource type="Texture2D" uid="uid://svsx2brs1tm0" path="res://images/adventurer/adventurer_walk2.png" id="6_wj3be"]
+[ext_resource type="AudioStream" uid="uid://cfh7w5yr8pu5" path="res://sounds/jump1.ogg" id="7_70utm"]
+[ext_resource type="PackedScene" uid="uid://beb3ge430jgwf" path="res://game objects/player_controller.tscn" id="8_rkjbx"]
+[ext_resource type="PackedScene" uid="uid://b6es0c0vsyntl" path="res://game objects/character_animation.tscn" id="9_vbq64"]
+[ext_resource type="PackedScene" uid="uid://cm7notme5iil5" path="res://ui/p_hud.tscn" id="10_dktyg"]
+[ext_resource type="PackedScene" uid="uid://rip02nffbhah" path="res://game objects/components/health_component.tscn" id="11_vfchb"]
+[ext_resource type="PackedScene" uid="uid://cq5gbmf3ujfn" path="res://game objects/components/gravity_component.tscn" id="12_wj3be"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb3kq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkjbx")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vbq64")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dktyg")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vfchb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wj3be")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbq64"]
+radius = 20.0
+height = 92.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxww1"]
+radius = 12.0
+height = 24.0
+
+[node name="Character" type="CharacterBody2D" unique_id=942052598 node_paths=PackedStringArray("char_animation", "player_controller")]
+collision_layer = 2
+collision_mask = 44
+script = ExtResource("1_ce4cu")
+char_animation = NodePath("CharacterAnimation")
+player_controller = NodePath("PlayerController")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=390628467]
+unique_name_in_owner = true
+position = Vector2(0, -23)
+sprite_frames = SubResource("SpriteFrames_jb3kq")
+animation = &"Idle"
+
+[node name="PickUp" type="Area2D" parent="." unique_id=459356856]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUp" unique_id=394323930]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_vbq64")
+debug_color = Color(0.80343366, 0.005778193, 0.99999994, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=707085496]
+position = Vector2(0, 20)
+shape = SubResource("CapsuleShape2D_yxww1")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1021598432]
+offset = Vector2(0, -100)
+zoom = Vector2(0.9, 0.9)
+
+[node name="DoubleJumpSFX" type="AudioStreamPlayer" parent="." unique_id=1798597385]
+unique_name_in_owner = true
+stream = ExtResource("7_70utm")
+volume_db = -25.0
+
+[node name="PlayerController" parent="." unique_id=1797567489 node_paths=PackedStringArray("player") instance=ExtResource("8_rkjbx")]
+unique_name_in_owner = true
+player = NodePath("..")
+
+[node name="CharacterAnimation" parent="." unique_id=1852894487 node_paths=PackedStringArray("player") instance=ExtResource("9_vbq64")]
+unique_name_in_owner = true
+player = NodePath("..")
+
+[node name="P_HUD" parent="." unique_id=913987814 node_paths=PackedStringArray("player") instance=ExtResource("10_dktyg")]
+unique_name_in_owner = true
+player = NodePath("..")
+
+[node name="HealthComponent" parent="." unique_id=936066441 instance=ExtResource("11_vfchb")]
+unique_name_in_owner = true
+max_health = 50
+
+[node name="GravityComponent" parent="." unique_id=1259089285 node_paths=PackedStringArray("character") instance=ExtResource("12_wj3be")]
+character = NodePath("..")

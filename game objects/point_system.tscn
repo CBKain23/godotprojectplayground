@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ddyxt1rwmgkuk"]
+
+[ext_resource type="Script" uid="uid://duidud0mj5fet" path="res://scripts/point_system.gd" id="1_xaj26"]
+
+[node name="PointSystem" type="Node" unique_id=711780399]
+script = ExtResource("1_xaj26")

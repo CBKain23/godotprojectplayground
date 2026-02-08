@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cuw7ik57mx48c"]
+
+[ext_resource type="Script" uid="uid://4uw0njr6x3ry" path="res://scripts/level_manager.gd" id="1_hvuti"]
+[ext_resource type="PackedScene" uid="uid://bn3d83p6ojjfa" path="res://levels/2d_playground_space.tscn" id="2_6tvrh"]
+[ext_resource type="PackedScene" uid="uid://cxkwojq8evfm3" path="res://levels/test_flag_stage.tscn" id="3_k4541"]
+
+[node name="LevelManager" type="Node" unique_id=765872877]
+script = ExtResource("1_hvuti")
+baseLevel = ExtResource("2_6tvrh")
+testFlagLevel = ExtResource("3_k4541")
