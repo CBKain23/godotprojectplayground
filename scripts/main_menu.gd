@@ -9,6 +9,10 @@ class_name MainMenu extends CanvasLayer
 @export var year : int = 2026
 
 @onready var build : Label = %BuildDate
+@onready var level : Level
+
+@export_enum("Base Level", "Test Level") var levelSelect : String
+#var level_dict = {"Base Level": }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

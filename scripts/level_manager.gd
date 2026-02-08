@@ -1,7 +1,8 @@
-class_name Level extends Node
+extends Node
 
 @export var baseLevel : PackedScene
 @export var testFlagLevel : PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

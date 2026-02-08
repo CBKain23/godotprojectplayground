@@ -2,6 +2,8 @@ class_name SoundSystem extends Node
 
 var isMusicPlaying : bool = false
 
+var music_set = {AudioStreamPlayer: MainMenuMusic}
+
 @export var game_manager : Game_Manager
 
 @export var coin : AudioStreamPlayer
@@ -13,6 +15,8 @@ var isMusicPlaying : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+	
+	
 
 func playMusic(audio: AudioStreamPlayer):
 	
