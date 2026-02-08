@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectPlayground"
-run/main_scene="uid://bn3d83p6ojjfa"
+run/main_scene="uid://bbeabhcoulgha"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://images/icon.svg"
 

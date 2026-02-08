@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbeabhcoulgha"]
 
 [ext_resource type="Script" uid="uid://dblv6qgfbfout" path="res://scripts/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="PackedScene" uid="uid://bn3d83p6ojjfa" path="res://levels/2d_playground_space.tscn" id="2_wk0pr"]
 [ext_resource type="PackedScene" uid="uid://cni1y5uyx8mki" path="res://game objects/game_manager.tscn" id="3_wk0pr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
@@ -11,6 +12,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="MainMenu" type="CanvasLayer" unique_id=1066006091 node_paths=PackedStringArray("manager")]
 script = ExtResource("1_t7e0r")
 manager = NodePath("GameManager")
+scene = ExtResource("2_wk0pr")
 
 [node name="MainControl" type="Control" parent="." unique_id=1976934822]
 layout_mode = 3
