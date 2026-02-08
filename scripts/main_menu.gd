@@ -16,3 +16,7 @@ func _process(delta: float) -> void:
 func _on_start_game_pressed() -> void:
 	
 	manager.level.changeLevel(manager.level.baseLevel)
+
+
+func _on_exit_game_pressed() -> void:
+	get_tree().quit()
