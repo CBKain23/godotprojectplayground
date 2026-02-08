@@ -16,6 +16,7 @@ func _ready() -> void:
 	
 	build.text = "Build Date: " + str(month) + "/" + str(day) + "/" + str(year)
 	
+	manager.sound.playMusic(manager.sound.MainMenuMusic)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +26,7 @@ func _process(delta: float) -> void:
 
 func _on_start_game_pressed() -> void:
 	
+	manager.sound.stopMusic(manager.sound.MainMenuMusic)
 	get_tree().change_scene_to_packed(scene)
 
 

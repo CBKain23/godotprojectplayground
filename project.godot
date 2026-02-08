@@ -19,6 +19,10 @@ config/icon="res://images/icon.svg"
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [importer_defaults]
 
 texture={
