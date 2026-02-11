@@ -18,5 +18,5 @@ func changeWinTextVisibility():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	coinText.text = "Coin: " + str(player.game_manager.points.getPoints())
+	#coinText.text = "Coin: " + str(player.game_manager.points.getPoints())
 	healthText.text = "Health: " + str(player.get_node("%HealthComponent").getHealth())

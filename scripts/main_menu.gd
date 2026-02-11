@@ -9,14 +9,7 @@ class_name MainMenu extends CanvasLayer
 @export var year : int = 2026
 
 @onready var build : Label = %BuildDate
-@onready var level : Level
 
-const mainMenu : String = "Main Menu"
-const baseLevel : String = "Base Level"
-const testLevel : String = "Test Level"
-
-@export_enum(baseLevel, testLevel) var levelSelect : String
-#var level_dict = {baseLevel : level.baseLevel, testLevel : level.testFlagLevel } 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +28,9 @@ func _process(delta: float) -> void:
 func _on_start_game_pressed() -> void:
 	
 	manager.sound.stopMusic()
+	#get_tree().change_scene_to_packed(manager.level.level_dict[manager.level.level])
+	#get_tree().change_scene_to_packed(manager.level.level_dict[manager.level])
+	
 	get_tree().change_scene_to_packed(scene)
 
 

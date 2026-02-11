@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cmm5husvii1uw" path="res://resources/TileMapSet.tres" id="1_rp2y6"]
 [ext_resource type="PackedScene" uid="uid://1g074344nc3p" path="res://game objects/character.tscn" id="2_878dg"]
 [ext_resource type="TileSet" uid="uid://spa4o6qc6kci" path="res://resources/CollectileTileSet.tres" id="2_ipvht"]
-[ext_resource type="PackedScene" uid="uid://cmms8faix0y6i" path="res://game objects/end_game_flag.tscn" id="4_h5074"]
+[ext_resource type="PackedScene" uid="uid://cni1y5uyx8mki" path="res://game objects/game_manager.tscn" id="4_h5074"]
 
 [node name="TestFlagStage" type="Node2D" unique_id=60959768]
 
@@ -19,19 +19,18 @@ tile_set = ExtResource("2_ipvht")
 position = Vector2(962, 312)
 game_manager = NodePath("../GameManager")
 
-[node name="GameManager" parent="." unique_id=1030829118 node_paths=PackedStringArray("playerChar") instance=ExtResource("4_h5074")]
-playerChar = NodePath("../Character")
+[node name="GameManager" parent="." unique_id=1030829118 instance=ExtResource("4_h5074")]
 
 [connection signal="body_entered" from="TileMapLayer/EndGameFlag" to="TileMapLayer/EndGameFlag" method="_on_body_entered"]
 [connection signal="area_entered" from="TileMapLayer2/Coin" to="TileMapLayer2/Coin" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25079" to="TileMapLayer2/@Area2D@25079" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25080" to="TileMapLayer2/@Area2D@25080" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25081" to="TileMapLayer2/@Area2D@25081" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25082" to="TileMapLayer2/@Area2D@25082" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25083" to="TileMapLayer2/@Area2D@25083" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25084" to="TileMapLayer2/@Area2D@25084" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25085" to="TileMapLayer2/@Area2D@25085" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25086" to="TileMapLayer2/@Area2D@25086" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25087" to="TileMapLayer2/@Area2D@25087" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25088" to="TileMapLayer2/@Area2D@25088" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapLayer2/@Area2D@25089" to="TileMapLayer2/@Area2D@25089" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57743" to="TileMapLayer2/@Area2D@57743" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57744" to="TileMapLayer2/@Area2D@57744" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57745" to="TileMapLayer2/@Area2D@57745" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57746" to="TileMapLayer2/@Area2D@57746" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57747" to="TileMapLayer2/@Area2D@57747" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57748" to="TileMapLayer2/@Area2D@57748" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57749" to="TileMapLayer2/@Area2D@57749" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57750" to="TileMapLayer2/@Area2D@57750" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57751" to="TileMapLayer2/@Area2D@57751" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57752" to="TileMapLayer2/@Area2D@57752" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer2/@Area2D@57753" to="TileMapLayer2/@Area2D@57753" method="_on_area_entered"]

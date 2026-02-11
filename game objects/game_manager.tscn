@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://dymq4l67v7lro" path="res://scripts/game_manager.gd" id="1_5vyem"]
 [ext_resource type="PackedScene" uid="uid://ddyxt1rwmgkuk" path="res://game objects/point_system.tscn" id="3_17rfg"]
 [ext_resource type="PackedScene" uid="uid://ckg5dsigg8bue" path="res://sounds/sound_system.tscn" id="3_76e68"]
+[ext_resource type="PackedScene" uid="uid://cuw7ik57mx48c" path="res://levels/level_manager.tscn" id="4_17rfg"]
 
-[node name="GameManager" type="Node" unique_id=1030829118 node_paths=PackedStringArray("sound", "points")]
+[node name="GameManager" type="Node" unique_id=1030829118 node_paths=PackedStringArray("sound", "points", "level")]
 script = ExtResource("1_5vyem")
 sound = NodePath("SoundSystem")
 points = NodePath("PointSystem")
+level = NodePath("LevelManager")
 
 [node name="PointSystem" parent="." unique_id=711780399 instance=ExtResource("3_17rfg")]
 
 [node name="SoundSystem" parent="." unique_id=1675318178 instance=ExtResource("3_76e68")]
+
+[node name="LevelManager" parent="." unique_id=765872877 instance=ExtResource("4_17rfg")]
+level = 1
