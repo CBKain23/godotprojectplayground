@@ -10,11 +10,14 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 @export var win : AudioStreamPlayer
 @export var jump : AudioStreamPlayer
 @export var MainMenuMusic : AudioStreamPlayer
+@export var BasicLevel : AudioStreamPlayer 
 
+@export var speaker : AudioStreamPlayer
+@export var SFX : AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 	
 	
 
@@ -22,27 +25,52 @@ func playMusic(audio: AudioStreamPlayer):
 	
 	match audio:
 		MainMenuMusic:
-			MainMenuMusic.play()
-			isMusicPlaying = true
-
-
-func stopMusic(audio: AudioStreamPlayer):
+			#MainMenuMusic.play()
+			speaker = MainMenuMusic
+			speaker.play()
+			
+		BasicLevel:
+			#BasicLevel.play()
+			speaker = BasicLevel
+			speaker.play()
 	
-	match audio:
-		MainMenuMusic:
-			MainMenuMusic.stop()
-			isMusicPlaying = false
+
+
+func pauseMusic():
+	speaker.stream_paused = true
+
+func unpauseMusic():
+	speaker.stream_paused = false
+
+func stopMusic():
+	
+	#match audio:
+		#MainMenuMusic:
+			#MainMenuMusic.stop()
+			#
+		#
+		#BasicLevel:
+			#BasicLevel.stop()
+	
+	speaker.stop()
+	
+
+
 
 func playSFX(audio: AudioStreamPlayer):
 	
 	match audio:
 		coin:
-			if not coin.is_playing():
-				coin.play()
+			SFX = coin
+			if not SFX.is_playing():
+				SFX.play()
 		win:
-			win.play()
+			SFX = win
+			SFX.play()
+			
 		jump:
-			jump.play()
+			SFX = jump
+			SFX.play()
 			
 		_:
 			print("There's no audio!")

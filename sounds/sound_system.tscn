@@ -3,28 +3,43 @@
 [ext_resource type="Script" uid="uid://btlfptqyrr0qp" path="res://scripts/sound_system.gd" id="1_0qqfr"]
 [ext_resource type="AudioStream" uid="uid://d2ks5ipt2hy26" path="res://sounds/pickup5.ogg" id="2_e7dul"]
 [ext_resource type="AudioStream" uid="uid://b6pt8ss5h8ql6" path="res://sounds/win.ogg" id="3_oxlne"]
-[ext_resource type="AudioStream" uid="uid://cfh7w5yr8pu5" path="res://sounds/jump1.ogg" id="4_r1e86"]
 [ext_resource type="AudioStream" uid="uid://7yys7eh5afp4" path="res://sounds/mainmenumusic.ogg" id="5_e7dul"]
+[ext_resource type="AudioStream" uid="uid://bor7xooyli1sf" path="res://sounds/2DBasicLevelMusic.ogg" id="6_oxlne"]
+[ext_resource type="AudioStream" uid="uid://c5x7cvmna3sij" path="res://sounds/phaseJump1.ogg" id="6_r1e86"]
 
-[node name="SoundSystem" type="Node" unique_id=1675318178 node_paths=PackedStringArray("coin", "win", "jump", "MainMenuMusic")]
+[node name="SoundSystem" type="Node" unique_id=1675318178 node_paths=PackedStringArray("coin", "win", "jump", "MainMenuMusic", "BasicLevel", "speaker", "SFX")]
+process_mode = 3
 script = ExtResource("1_0qqfr")
-coin = NodePath("CoinPickUpSFX")
-win = NodePath("WinSFX")
-jump = NodePath("JumpSFX")
-MainMenuMusic = NodePath("MainMenuMusic")
+coin = NodePath("SFX/CoinPickUpSFX")
+win = NodePath("SFX/WinSFX")
+jump = NodePath("SFX/Jump1SFX")
+MainMenuMusic = NodePath("MainStreamPlayer/MainMenuMusic")
+BasicLevel = NodePath("MainStreamPlayer/2DBasicLevelMusic")
+speaker = NodePath("MainStreamPlayer")
+SFX = NodePath("SFX")
 
-[node name="CoinPickUpSFX" type="AudioStreamPlayer" parent="." unique_id=400451112]
+[node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=533237970]
+
+[node name="2DBasicLevelMusic" type="AudioStreamPlayer" parent="MainStreamPlayer" unique_id=238576057]
+stream = ExtResource("6_oxlne")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="MainStreamPlayer" unique_id=1562662959]
+stream = ExtResource("5_e7dul")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1562640284]
+
+[node name="CoinPickUpSFX" type="AudioStreamPlayer" parent="SFX" unique_id=400451112]
 stream = ExtResource("2_e7dul")
 volume_db = -20.0
 pitch_scale = 2.0
 
-[node name="WinSFX" type="AudioStreamPlayer" parent="." unique_id=1593080481]
+[node name="WinSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1593080481]
 stream = ExtResource("3_oxlne")
 
-[node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=2040772935]
-stream = ExtResource("4_r1e86")
-volume_db = -15.0
-
-[node name="MainMenuMusic" type="AudioStreamPlayer" parent="." unique_id=1562662959]
-stream = ExtResource("5_e7dul")
-parameters/looping = true
+[node name="Jump1SFX" type="AudioStreamPlayer" parent="SFX" unique_id=2040772935]
+stream = ExtResource("6_r1e86")
+volume_db = 10.0

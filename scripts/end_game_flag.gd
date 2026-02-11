@@ -6,6 +6,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func endLevel(player : Character):
+	player.game_manager.sound.stopMusic()
 	player.get_node("%P_HUD").changeWinTextVisibility()
 	player.game_manager.sound.playSFX(player.game_manager.sound.win)
 	await get_tree().create_timer(5.0).timeout

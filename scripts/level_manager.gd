@@ -1,8 +1,14 @@
 extends Node
 
-@export var baseLevel : PackedScene
+@export var baseLevel1 : PackedScene
 @export var testFlagLevel : PackedScene
 
+const mainMenu : String = "Main Menu"
+const baseLevel : String = "Base Level"
+const testLevel : String = "Test Level"
+
+@export_enum(baseLevel, testLevel) var levelSelect : String
+var level_dict = {baseLevel : baseLevel, testLevel : testFlagLevel } 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
