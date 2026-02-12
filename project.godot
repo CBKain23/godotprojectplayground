@@ -18,6 +18,8 @@ config/icon="res://images/icon.svg"
 [autoload]
 
 Level="*uid://4uw0njr6x3ry"
+GameManager="*uid://dymq4l67v7lro"
+Sound="*uid://btlfptqyrr0qp"
 
 [display]
 

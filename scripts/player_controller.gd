@@ -71,10 +71,12 @@ func jump():
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		player.velocity.y = jumpFloat
 		player.game_manager.sound.playSFX(player.game_manager.sound.jump)
+		#player.gameManager.sound.playSFX(player.gameManager.sound.jump)
+		#player.gameManager.soundSystem.playSFX(player.gameManager.sound.jump)
 	
 	if Input.is_action_just_pressed("jump") and not hasDoubleJumped and not player.is_on_floor():
 		player.velocity.y = doubleJumpFloat
-		
+		player.game_manager.sound.playSFX(player.game_manager.sound.jump2)
 		hasDoubleJumped = true
 	
 

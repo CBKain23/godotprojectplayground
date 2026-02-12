@@ -4,6 +4,8 @@ class_name MainMenu extends CanvasLayer
 @export var manager : Game_Manager
 @export var scene : PackedScene
 
+var menu : CanvasLayer
+
 @export var month : int 
 @export var day : int
 @export var year : int = 2026
@@ -32,6 +34,7 @@ func _on_start_game_pressed() -> void:
 	#get_tree().change_scene_to_packed(manager.level.level_dict[manager.level])
 	
 	get_tree().change_scene_to_packed(scene)
+	#get_tree().change_scene_to_packed(manager.level.gameLevel[manager.level.level])
 
 
 func _on_exit_game_pressed() -> void:

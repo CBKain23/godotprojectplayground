@@ -15,7 +15,8 @@ script = ExtResource("1_17n5k")
 position = Vector2(24, 0)
 texture = ExtResource("1_12v6u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502978641]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1502978641]
+unique_name_in_owner = true
 position = Vector2(16, -193)
 shape = SubResource("RectangleShape2D_12v6u")
 

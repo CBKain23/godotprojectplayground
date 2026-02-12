@@ -14,8 +14,7 @@ script = ExtResource("1_t7e0r")
 manager = NodePath("GameManager")
 scene = ExtResource("2_wk0pr")
 month = 2
-day = 10
-year = null
+day = 12
 
 [node name="MainControl" type="Control" parent="." unique_id=1976934822]
 layout_mode = 3

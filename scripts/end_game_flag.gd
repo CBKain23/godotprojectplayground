@@ -6,10 +6,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func endLevel(player : Character):
+	#%Collision.disabled = true
 	player.game_manager.sound.stopMusic()
 	player.get_node("%P_HUD").changeWinTextVisibility()
 	player.game_manager.sound.playSFX(player.game_manager.sound.win)
-	await get_tree().create_timer(5.0).timeout
+	player.game_manager.sound.playSFX(player.game_manager.sound.winJingle)
+	#await get_tree().creater_timer(0.5).timeout
+	player.game_manager.sound.playSFX(player.game_manager.sound.youWin)
+	await get_tree().create_timer(5.5).timeout
 	get_tree().quit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,10 +1,10 @@
 class_name Character extends CharacterBody2D
 
 @export var char_animation : Character_Animation
-
 @export var game_manager : Game_Manager
-
 @export var player_controller : Player_Controller
+
+var gameManager : GameManager
 
 func _ready() -> void:
 	pass

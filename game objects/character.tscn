@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dntdolxowiovt" path="res://images/adventurer/adventurer_jump.png" id="4_dktyg"]
 [ext_resource type="Texture2D" uid="uid://bict0r3cia51v" path="res://images/adventurer/adventurer_walk1.png" id="5_vfchb"]
 [ext_resource type="Texture2D" uid="uid://svsx2brs1tm0" path="res://images/adventurer/adventurer_walk2.png" id="6_wj3be"]
-[ext_resource type="AudioStream" uid="uid://cfh7w5yr8pu5" path="res://sounds/jump1.ogg" id="7_70utm"]
 [ext_resource type="PackedScene" uid="uid://beb3ge430jgwf" path="res://game objects/player_controller.tscn" id="8_rkjbx"]
 [ext_resource type="PackedScene" uid="uid://b6es0c0vsyntl" path="res://game objects/character_animation.tscn" id="9_vbq64"]
 [ext_resource type="PackedScene" uid="uid://cm7notme5iil5" path="res://ui/p_hud.tscn" id="10_dktyg"]
@@ -89,11 +88,6 @@ shape = SubResource("CapsuleShape2D_yxww1")
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1021598432]
 offset = Vector2(0, -100)
 zoom = Vector2(0.9, 0.9)
-
-[node name="DoubleJumpSFX" type="AudioStreamPlayer" parent="." unique_id=1798597385]
-unique_name_in_owner = true
-stream = ExtResource("7_70utm")
-volume_db = -25.0
 
 [node name="PlayerController" parent="." unique_id=1797567489 node_paths=PackedStringArray("player") instance=ExtResource("8_rkjbx")]
 unique_name_in_owner = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv1uo65p42bq5"
+path="res://.godot/imported/Reggae ident.ogg-3e2c5ee8c5757c0fd0bd685100f225bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Reggae ident.ogg"
+dest_files=["res://.godot/imported/Reggae ident.ogg-3e2c5ee8c5757c0fd0bd685100f225bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
