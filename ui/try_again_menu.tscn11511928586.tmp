@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bveatehsyiei4"]
+
+[ext_resource type="Script" uid="uid://dwonp7ygxqrv3" path="res://scripts/ui/try_again_menu.gd" id="1_te0qa"]
+[ext_resource type="PackedScene" uid="uid://cni1y5uyx8mki" path="res://game objects/game_manager.tscn" id="1_vl5e3"]
+[ext_resource type="PackedScene" uid="uid://bbeabhcoulgha" path="res://ui/main_menu.tscn" id="2_vgs20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhwta"]
+font_size = 35
+
+[node name="TryAgainMenu" type="CanvasLayer" unique_id=104366777 node_paths=PackedStringArray("manager")]
+script = ExtResource("1_te0qa")
+scene = ExtResource("2_vgs20")
+manager = NodePath("GameManager")
+
+[node name="Main" type="Control" parent="." unique_id=280437239]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TryAgainLabel" type="Label" parent="Main" unique_id=1602675156]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 80.0
+offset_right = 66.0
+offset_bottom = 103.0
+grow_horizontal = 2
+text = "Wanna Try Again?"
+label_settings = SubResource("LabelSettings_fhwta")
+
+[node name="Yes" type="Button" parent="Main" unique_id=1727988491]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -92.0
+offset_right = 80.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Yes"
+
+[node name="No" type="Button" parent="Main" unique_id=244344450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "No"
+
+[node name="GameManager" parent="." unique_id=1030829118 instance=ExtResource("1_vl5e3")]
+
+[connection signal="button_down" from="Main/Yes" to="." method="_on_yes_button_down"]
+[connection signal="pressed" from="Main/Yes" to="." method="_on_yes_pressed"]
+[connection signal="button_down" from="Main/No" to="." method="_on_no_button_down"]
+[connection signal="pressed" from="Main/No" to="." method="_on_no_pressed"]

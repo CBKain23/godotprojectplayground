@@ -11,18 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://bt27bwri1v6x7" path="res://sounds/you_win.ogg" id="9_uvsuh"]
 [ext_resource type="AudioStream" uid="uid://dv1uo65p42bq5" path="res://sounds/Reggae ident.ogg" id="10_wmqr8"]
 
-[node name="SoundSystem" type="Node" unique_id=1675318178 node_paths=PackedStringArray("coin", "win", "jump", "jump2", "youWin", "winJingle", "click", "MainMenuMusic", "BasicLevel", "speaker", "SFX")]
+[node name="SoundSystem" type="Node" unique_id=1675318178 node_paths=PackedStringArray("speaker", "SFX")]
 process_mode = 3
 script = ExtResource("1_0qqfr")
-coin = NodePath("SFX/CoinPickUpSFX")
-win = NodePath("SFX/WinSFX")
-jump = NodePath("SFX/Jump1SFX")
-jump2 = NodePath("SFX/Jump2SFX")
-youWin = NodePath("SFX/YouWinSFX")
-winJingle = NodePath("SFX/WinJingleSFX")
-click = NodePath("SFX/ClickSFX")
-MainMenuMusic = NodePath("MainStreamPlayer/MainMenuMusic")
-BasicLevel = NodePath("MainStreamPlayer/2DBasicLevelMusic")
 mainMenu = ExtResource("5_e7dul")
 basicLevel = ExtResource("6_oxlne")
 speaker = NodePath("MainStreamPlayer")
@@ -31,11 +22,13 @@ SFX = NodePath("SFX")
 [node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=533237970]
 
 [node name="2DBasicLevelMusic" type="AudioStreamPlayer" parent="MainStreamPlayer" unique_id=238576057]
+unique_name_in_owner = true
 stream = ExtResource("6_oxlne")
 volume_db = -10.0
 parameters/looping = true
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="MainStreamPlayer" unique_id=1562662959]
+unique_name_in_owner = true
 stream = ExtResource("5_e7dul")
 volume_db = -15.0
 parameters/looping = true
@@ -43,28 +36,35 @@ parameters/looping = true
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1562640284]
 
 [node name="CoinPickUpSFX" type="AudioStreamPlayer" parent="SFX" unique_id=400451112]
+unique_name_in_owner = true
 stream = ExtResource("2_e7dul")
 volume_db = -20.0
 pitch_scale = 2.0
 
 [node name="WinSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1593080481]
+unique_name_in_owner = true
 stream = ExtResource("3_oxlne")
 
 [node name="Jump1SFX" type="AudioStreamPlayer" parent="SFX" unique_id=2040772935]
+unique_name_in_owner = true
 stream = ExtResource("6_r1e86")
 volume_db = 10.0
 
 [node name="Jump2SFX" type="AudioStreamPlayer" parent="SFX" unique_id=1890755690]
+unique_name_in_owner = true
 stream = ExtResource("7_r1e86")
 volume_db = 10.0
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1261341366]
+unique_name_in_owner = true
 stream = ExtResource("8_fo0wu")
 volume_db = 5.0
 
 [node name="YouWinSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1651398781]
+unique_name_in_owner = true
 stream = ExtResource("9_uvsuh")
 volume_db = -5.0
 
 [node name="WinJingleSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1307907329]
+unique_name_in_owner = true
 stream = ExtResource("10_wmqr8")

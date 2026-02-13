@@ -69,4 +69,5 @@ text = "No"
 
 [connection signal="button_down" from="Main/Yes" to="." method="_on_yes_button_down"]
 [connection signal="pressed" from="Main/Yes" to="." method="_on_yes_pressed"]
+[connection signal="button_down" from="Main/No" to="." method="_on_no_button_down"]
 [connection signal="pressed" from="Main/No" to="." method="_on_no_pressed"]

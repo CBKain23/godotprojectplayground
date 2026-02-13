@@ -3,6 +3,8 @@ extends CanvasLayer
 @export var scene : PackedScene
 @export var manager : Game_Manager
 
+@export var level : Level.LevelSelect
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,3 +28,9 @@ func _on_no_pressed() -> void:
 
 func _on_yes_button_down() -> void:
 	manager.sound.buttonClick()
+
+
+func _on_no_button_down() -> void:
+	manager.sound.buttonClick()
+	#GameManager.soundSystem.buttonClick()
+	#Sound.buttonClick()

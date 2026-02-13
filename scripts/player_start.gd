@@ -1,26 +1,22 @@
 class_name Player_Start extends Node2D
 
 @onready var game_manager = Game_Manager.new()
-
+@onready var spawn : Marker2D = %SpawnLocation
+@export var player = preload("uid://1g074344nc3p")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#$Sprite.visible = false
-	#
-	#character.global_position = $".".global_position
-	#
-	#add_child(character)
-	pass
-	game_manager.getPlayerStart(self)
+	player.instantiate()
+	spawn_player()
 
 
 
-func spawn_player(character: Character):
+func spawn_player():
 	$Sprite.visible = false
 	
-	character.global_position = $".".global_position
+	player.global_position = spawn.global_position
 	
-	add_child(character)
+	add_child(player)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

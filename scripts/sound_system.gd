@@ -8,15 +8,15 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 
 @export var game_manager : Game_Manager
 
-@export var coin : AudioStreamPlayer
-@export var win : AudioStreamPlayer
-@export var jump : AudioStreamPlayer
-@export var jump2 : AudioStreamPlayer
-@export var youWin : AudioStreamPlayer
-@export var winJingle : AudioStreamPlayer
-@export var click : AudioStreamPlayer
-@export var MainMenuMusic : AudioStreamPlayer
-@export var BasicLevel : AudioStreamPlayer 
+@onready var coin : AudioStreamPlayer = %CoinPickUpSFX
+@onready var win : AudioStreamPlayer = %WinSFX
+@onready var jump : AudioStreamPlayer = %Jump1SFX
+@onready var jump2 : AudioStreamPlayer = %Jump2SFX
+@onready var youWin : AudioStreamPlayer = %YouWinSFX
+@onready var winJingle : AudioStreamPlayer = %WinJingleSFX
+@onready var click : AudioStreamPlayer = %ClickSFX
+@onready var MainMenuMusic : AudioStreamPlayer = %MainMenuMusic
+@onready var BasicLevel : AudioStreamPlayer  = %"2DBasicLevelMusic"
 
 #AudioStream version of this method
 @export var mainMenu : AudioStream

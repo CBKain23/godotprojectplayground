@@ -65,6 +65,10 @@ script = ExtResource("1_ce4cu")
 char_animation = NodePath("CharacterAnimation")
 player_controller = NodePath("PlayerController")
 
+[node name="P_HUD" parent="." unique_id=913987814 node_paths=PackedStringArray("player") instance=ExtResource("10_dktyg")]
+unique_name_in_owner = true
+player = NodePath("..")
+
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=390628467]
 unique_name_in_owner = true
 position = Vector2(0, -23)
@@ -94,10 +98,6 @@ unique_name_in_owner = true
 player = NodePath("..")
 
 [node name="CharacterAnimation" parent="." unique_id=1852894487 node_paths=PackedStringArray("player") instance=ExtResource("9_vbq64")]
-unique_name_in_owner = true
-player = NodePath("..")
-
-[node name="P_HUD" parent="." unique_id=913987814 node_paths=PackedStringArray("player") instance=ExtResource("10_dktyg")]
 unique_name_in_owner = true
 player = NodePath("..")
 

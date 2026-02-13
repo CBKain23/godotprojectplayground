@@ -1,17 +1,7 @@
 [gd_scene format=3 uid="uid://cuw7ik57mx48c"]
 
 [ext_resource type="Script" uid="uid://4uw0njr6x3ry" path="res://scripts/managers/level_manager.gd" id="1_hvuti"]
-[ext_resource type="PackedScene" uid="uid://bn3d83p6ojjfa" path="res://levels/2d_playground_space.tscn" id="2_k4541"]
-[ext_resource type="PackedScene" uid="uid://cxkwojq8evfm3" path="res://levels/test_flag_stage.tscn" id="3_ce4gc"]
-[ext_resource type="PackedScene" uid="uid://bbeabhcoulgha" path="res://ui/main_menu.tscn" id="4_ce4gc"]
 
 [node name="LevelManager" type="Node" unique_id=765872877]
 script = ExtResource("1_hvuti")
-baseLevel = ExtResource("2_k4541")
-testFlagLevel = ExtResource("3_ce4gc")
-mainMenuScene = ExtResource("4_ce4gc")
 level = 1
-gameLevel = Dictionary[int, PackedScene]({
-0: ExtResource("2_k4541"),
-1: ExtResource("3_ce4gc")
-})
