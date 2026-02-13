@@ -14,6 +14,7 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 @export var jump2 : AudioStreamPlayer
 @export var youWin : AudioStreamPlayer
 @export var winJingle : AudioStreamPlayer
+@export var click : AudioStreamPlayer
 @export var MainMenuMusic : AudioStreamPlayer
 @export var BasicLevel : AudioStreamPlayer 
 
@@ -98,13 +99,21 @@ func playSFX(audio: AudioStreamPlayer):
 		youWin:
 			SFX = youWin
 			SFX.play()
+		
 		winJingle:
 			SFX = winJingle
+			SFX.play()
+		
+		click:
+			SFX = click
 			SFX.play()
 		_:
 			print("There's no audio!")
 			
 	
+
+func buttonClick():
+	playSFX(click)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

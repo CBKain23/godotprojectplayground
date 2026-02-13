@@ -1,6 +1,8 @@
 class_name End_Game extends Area2D
 
 @onready var collision : CollisionShape2D = %Collision
+@export var scene : PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +17,8 @@ func endLevel(player : Character):
 	#await get_tree().creater_timer(0.5).timeout
 	player.game_manager.sound.playSFX(player.game_manager.sound.youWin)
 	await get_tree().create_timer(5.0).timeout
-	get_tree().quit()
+	#get_tree().change_scene_to_packed(player.game_manager.level.mainMenuScene)
+	get_tree().change_scene_to_packed(Level.tryAgainMenu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

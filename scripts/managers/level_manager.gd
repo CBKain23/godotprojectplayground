@@ -1,12 +1,12 @@
 extends Node
 
-var baseLevel : PackedScene
-var testFlagLevel : PackedScene
-var mainMenuScene : PackedScene
+var baseLevel : PackedScene = preload("uid://bn3d83p6ojjfa")
+var testFlagLevel : PackedScene = preload("uid://cxkwojq8evfm3")
+var mainMenuScene : PackedScene = preload("uid://bbeabhcoulgha")
+var tryAgainMenu : PackedScene = preload("uid://bveatehsyiei4")
 
 
-
-enum LevelSelect {BaseLevel, TestLevel, MainMenuLevel}
+enum LevelSelect {BaseLevel, TestLevel, MainMenuLevel, tryAgain}
 @export var level : LevelSelect
 
 @export var gameLevel : Dictionary[LevelSelect, PackedScene]
@@ -15,7 +15,7 @@ enum LevelSelect {BaseLevel, TestLevel, MainMenuLevel}
 	LevelSelect.BaseLevel : baseLevel,
 	LevelSelect.TestLevel : testFlagLevel,
 	LevelSelect.MainMenuLevel : mainMenuScene,
-	
+	LevelSelect.tryAgain : tryAgainMenu,
 	}
 
 #@export_enum(baseLevel, testLevel, mainMenu) var levelSelect : String

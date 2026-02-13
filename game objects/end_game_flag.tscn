@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ciqedcybus3ru" path="res://images/obstacles/flagRed.png" id="1_12v6u"]
 [ext_resource type="Script" uid="uid://hdpycu8kqq5y" path="res://scripts/end_game_flag.gd" id="1_17n5k"]
+[ext_resource type="PackedScene" uid="uid://bveatehsyiei4" path="res://ui/try_again_menu.tscn" id="2_2avf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12v6u"]
 size = Vector2(80, 457)
@@ -10,6 +11,7 @@ size = Vector2(80, 457)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_17n5k")
+scene = ExtResource("2_2avf0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1883074271]
 position = Vector2(24, 0)

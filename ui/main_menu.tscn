@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbeabhcoulgha"]
 
-[ext_resource type="Script" uid="uid://dblv6qgfbfout" path="res://scripts/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="Script" uid="uid://dblv6qgfbfout" path="res://scripts/ui/main_menu.gd" id="1_t7e0r"]
 [ext_resource type="PackedScene" uid="uid://bn3d83p6ojjfa" path="res://levels/2d_playground_space.tscn" id="2_wk0pr"]
 [ext_resource type="PackedScene" uid="uid://cni1y5uyx8mki" path="res://game objects/game_manager.tscn" id="3_wk0pr"]
 
@@ -89,5 +89,7 @@ vertical_alignment = 2
 
 [node name="GameManager" parent="." unique_id=1030829118 instance=ExtResource("3_wk0pr")]
 
+[connection signal="button_down" from="MainControl/StartGame" to="." method="_on_start_game_button_down"]
 [connection signal="pressed" from="MainControl/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="button_down" from="MainControl/ExitGame" to="." method="_on_exit_game_button_down"]
 [connection signal="pressed" from="MainControl/ExitGame" to="." method="_on_exit_game_pressed"]

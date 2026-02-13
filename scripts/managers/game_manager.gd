@@ -3,7 +3,8 @@ class_name Game_Manager extends Node
 
 @export var sound : SoundSystem
 @export var points : Points
-@export var level : Level
+
+
 
 var soundSystem : Sound 
 
