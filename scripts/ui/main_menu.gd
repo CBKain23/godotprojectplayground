@@ -2,7 +2,7 @@ class_name MainMenu extends CanvasLayer
 
 
 @export var manager : Game_Manager
-@export var scene : PackedScene
+
 
 var menu : CanvasLayer
 @export var select : Level.LevelSelect

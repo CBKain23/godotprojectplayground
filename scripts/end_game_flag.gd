@@ -1,7 +1,7 @@
 class_name End_Game extends Area2D
 
 @onready var collision : CollisionShape2D = %Collision
-@export var scene : PackedScene
+
 
 
 # Called when the node enters the scene tree for the first time.
