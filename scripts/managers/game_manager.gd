@@ -1,9 +1,11 @@
 class_name Game_Manager extends Node
 
 
-@export var sound : SoundSystem
-@export var points : Points
+@export var sound : Sound
+#var sound : SoundSystem = preload("uid://ckg5dsigg8bue").instantiate()
+var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()
 
+#@onready var menu : Menu
 
 
 var soundSystem : Sound 

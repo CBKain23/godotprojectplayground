@@ -4,10 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ddyxt1rwmgkuk" path="res://game objects/point_system.tscn" id="3_17rfg"]
 [ext_resource type="PackedScene" uid="uid://ckg5dsigg8bue" path="res://sounds/sound_system.tscn" id="3_76e68"]
 
-[node name="GameManager" type="Node" unique_id=1030829118 node_paths=PackedStringArray("sound", "points")]
+[node name="GameManager" type="Node" unique_id=1030829118 node_paths=PackedStringArray("sound")]
 script = ExtResource("1_5vyem")
 sound = NodePath("SoundSystem")
-points = NodePath("PointSystem")
 
 [node name="PointSystem" parent="." unique_id=711780399 instance=ExtResource("3_17rfg")]
 

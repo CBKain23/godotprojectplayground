@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectPlayground"
-run/main_scene="uid://bbeabhcoulgha"
+run/main_scene="uid://cwt57qrldau8m"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://images/icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://images/icon.svg"
 Level="*uid://4uw0njr6x3ry"
 GameManager="*uid://dymq4l67v7lro"
 Sound="*uid://btlfptqyrr0qp"
+Menu="*uid://cupa4l33hmylw"
 
 [display]
 

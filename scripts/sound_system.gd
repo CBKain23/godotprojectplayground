@@ -19,8 +19,8 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 @onready var BasicLevel : AudioStreamPlayer  = %"2DBasicLevelMusic"
 
 #AudioStream version of this method
-@export var mainMenu : AudioStream
-@export var basicLevel : AudioStream
+@export var mainMenuStream : AudioStream
+@export var basicLevelStream : AudioStream
 @export_range(-80.0, 24.0) var mainMenuVol : float = -15.0
 @export_range(-80.0, 24.0) var basicLevelVol : float = -10.0
 @export_range(-80.0, 24.0) var speakerVol : float 

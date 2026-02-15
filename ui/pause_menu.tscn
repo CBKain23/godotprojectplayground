@@ -9,6 +9,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1503117782]
 process_mode = 2
+layer = 10
 script = ExtResource("1_50142")
 
 [node name="Main" type="Control" parent="." unique_id=1163984790]
