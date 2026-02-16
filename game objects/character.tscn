@@ -62,8 +62,8 @@ height = 24.0
 collision_layer = 2
 collision_mask = 44
 script = ExtResource("1_ce4cu")
-char_animation = NodePath("CharacterAnimation")
-player_controller = NodePath("PlayerController")
+char_animation = NodePath("Components/CharacterAnimation")
+player_controller = NodePath("Components/PlayerController")
 
 [node name="P_HUD" parent="." unique_id=913987814 node_paths=PackedStringArray("player") instance=ExtResource("10_dktyg")]
 unique_name_in_owner = true
@@ -80,12 +80,12 @@ unique_name_in_owner = true
 collision_layer = 64
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUp" unique_id=394323930]
+[node name="PickUpCollision" type="CollisionShape2D" parent="PickUp" unique_id=394323930]
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_vbq64")
 debug_color = Color(0.80343366, 0.005778193, 0.99999994, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=707085496]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=707085496]
 position = Vector2(0, 20)
 shape = SubResource("CapsuleShape2D_yxww1")
 
@@ -93,17 +93,20 @@ shape = SubResource("CapsuleShape2D_yxww1")
 offset = Vector2(0, -100)
 zoom = Vector2(0.9, 0.9)
 
-[node name="PlayerController" parent="." unique_id=1797567489 node_paths=PackedStringArray("player") instance=ExtResource("8_rkjbx")]
-unique_name_in_owner = true
-player = NodePath("..")
+[node name="Components" type="Node" parent="." unique_id=91591225]
 
-[node name="CharacterAnimation" parent="." unique_id=1852894487 node_paths=PackedStringArray("player") instance=ExtResource("9_vbq64")]
+[node name="PlayerController" parent="Components" unique_id=1797567489 node_paths=PackedStringArray("player") instance=ExtResource("8_rkjbx")]
 unique_name_in_owner = true
-player = NodePath("..")
+process_mode = 0
+player = NodePath("../..")
 
-[node name="HealthComponent" parent="." unique_id=936066441 instance=ExtResource("11_vfchb")]
+[node name="CharacterAnimation" parent="Components" unique_id=1852894487 node_paths=PackedStringArray("player") instance=ExtResource("9_vbq64")]
+unique_name_in_owner = true
+player = NodePath("../..")
+
+[node name="HealthComponent" parent="Components" unique_id=936066441 instance=ExtResource("11_vfchb")]
 unique_name_in_owner = true
 max_health = 50
 
-[node name="GravityComponent" parent="." unique_id=1259089285 node_paths=PackedStringArray("character") instance=ExtResource("12_wj3be")]
-character = NodePath("..")
+[node name="GravityComponent" parent="Components" unique_id=1259089285 node_paths=PackedStringArray("character") instance=ExtResource("12_wj3be")]
+character = NodePath("../..")

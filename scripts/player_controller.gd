@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -1 * 500.0
 const DOUBLE_JUMP_VELOCITY = JUMP_VELOCITY * 0.8
 const FALLING_POINT = 575.0
 
+var jumpCount : int = 0
+var jumpLimit : int = 1
 
 @export var player : Character
 
@@ -32,6 +34,14 @@ var doubleJumpFloat = jumpFloat * doubleJumpPercent
 var falling_pointFloat = 575.0
 
 var hasDoubleJumped : bool = false
+
+func pauseGame():
+	var pauseGame := Input.is_action_pressed("pause")
+	
+	if pauseGame:
+		get_tree().paused = true
+		Menu.addToScreen(Menu.pauseMenu, get_tree())
+
 #@onready var animation = Character_Animation.new()
 func DoubleJumpReset():
 	hasDoubleJumped = false
@@ -73,6 +83,8 @@ func jump():
 		player.game_manager.sound.playSFX(player.game_manager.sound.jump)
 		#player.gameManager.sound.playSFX(player.gameManager.sound.jump)
 		#player.gameManager.soundSystem.playSFX(player.gameManager.sound.jump)
+		
+		jumpCount += 1
 	
 	if Input.is_action_just_pressed("jump") and not hasDoubleJumped and not player.is_on_floor():
 		player.velocity.y = doubleJumpFloat
@@ -87,7 +99,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	
+	pauseGame()
 
 func _physics_process(delta: float) -> void:
 	
@@ -95,6 +108,8 @@ func _physics_process(delta: float) -> void:
 	
 	if player.is_on_floor():
 		DoubleJumpReset()
+		
+		jumpCount = 0
 	
 	player_movement()
 	

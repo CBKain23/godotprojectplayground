@@ -7,7 +7,8 @@ var menu : Menu
 @export var select : Menu.MenuSelect
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Menu.addToScreen(Menu.mainMenu, main)
+	#Menu.addToScreen(Menu.mainMenu)
+	main.add_child(Menu.addToScreen(Menu.mainMenu, get_tree()))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

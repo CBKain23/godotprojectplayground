@@ -18,6 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func addToScreen(menu : PackedScene, main : Control):
-	main.add_child(menu.instantiate())
-	#main.add_child(menu_dict.get(MenuSelect))
+func addToScreen(menu : PackedScene, tree : SceneTree):
+	tree.root.add_child(menu.instantiate())
+
+func removeFromScreen(menu: Node):
+	menu.queue_free()

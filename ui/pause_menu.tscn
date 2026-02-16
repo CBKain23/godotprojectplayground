@@ -20,6 +20,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="Main" unique_id=76271361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.24705882)
+
 [node name="PauseText" type="Label" parent="Main" unique_id=1450314272]
 layout_mode = 1
 anchors_preset = 5
@@ -47,4 +58,24 @@ offset_right = 102.70972
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 20
 text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="Main" unique_id=355748790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 28.0
+offset_right = 104.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to Main Menu"
+
+[connection signal="button_down" from="Main/ResumeButton" to="." method="_on_resume_button_button_down"]
+[connection signal="pressed" from="Main/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Main/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
