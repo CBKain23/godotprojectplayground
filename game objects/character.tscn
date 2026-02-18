@@ -50,9 +50,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbq64"]
-radius = 20.0
-height = 92.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfchb"]
+size = Vector2(80, 102)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxww1"]
 radius = 12.0
@@ -81,8 +80,8 @@ collision_layer = 64
 collision_mask = 16
 
 [node name="PickUpCollision" type="CollisionShape2D" parent="PickUp" unique_id=394323930]
-position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_vbq64")
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_vfchb")
 debug_color = Color(0.80343366, 0.005778193, 0.99999994, 0.41960785)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=707085496]
