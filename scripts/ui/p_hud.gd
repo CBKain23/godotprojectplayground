@@ -1,8 +1,15 @@
 class_name Player_HUD extends CanvasLayer
 
+##Reference to the Health Text label node
 @onready var healthText : Label = %HealthText
+
+##Reference to the Coin text label node
 @onready var coinText : Label = %CoinText
+
+##Reference to the Player character node
 @export var player : Character
+
+##Reference to the YouWin Label node
 @onready var youWin : Label = %YouWinText
 
 

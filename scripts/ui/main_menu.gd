@@ -1,24 +1,28 @@
 class_name MainMenu extends CanvasLayer
 
-
+##Reference for the Game Manager
 @export var manager : Game_Manager
 
 
-var menu : CanvasLayer
+
 @export var select : Level.LevelSelect
 
+#The numbers for the date of the build
 @export var month : int 
 @export var day : int
 @export var year : int = 2026
 
+##A reference variable for the BuildDate Label node
 @onready var build : Label = %BuildDate
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	#Display the build date
 	build.text = "Build Date: " + str(month) + "/" + str(day) + "/" + str(year)
 	
+	#Play the Main Menu Music
 	manager.sound.playMusic(manager.sound.MainMenuMusic)
 
 
@@ -29,13 +33,11 @@ func _process(delta: float) -> void:
 
 func _on_start_game_pressed() -> void:
 	
-	
+	#Stop the Music
 	manager.sound.stopMusic()
-	#get_tree().change_scene_to_packed(manager.level.level_dict[manager.level.level])
-	#get_tree().change_scene_to_packed(manager.level.level_dict[manager.level])
 	
+	#Change the scene to the Basic Level
 	get_tree().change_scene_to_packed(Level.baseLevel)
-	#get_tree().change_scene_to_packed(manager.level.gameLevel[manager.level.level])
 
 
 func _on_exit_game_pressed() -> void:

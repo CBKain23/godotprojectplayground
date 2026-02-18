@@ -14,22 +14,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#Return the main menu
 func _on_yes_pressed() -> void:
-	
 	get_tree().change_scene_to_packed(Level.mainMenuScene)
-	
-	
 
 
+#Quit the game
 func _on_no_pressed() -> void:
 	get_tree().quit()
 
-
+#Play the button click SFX
 func _on_yes_button_down() -> void:
 	manager.sound.buttonClick()
 
-
+#Play the button click SFX
 func _on_no_button_down() -> void:
 	manager.sound.buttonClick()
 	
