@@ -25,13 +25,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -72.0
-offset_top = 80.0
-offset_right = 66.0
-offset_bottom = 103.0
+offset_left = -132.0
+offset_top = 56.0
+offset_right = 135.0
+offset_bottom = 209.0
 grow_horizontal = 2
-text = "Wanna Try Again?"
+text = "Want to Return 
+to the 
+Main Menu?"
 label_settings = SubResource("LabelSettings_fhwta")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Yes" type="Button" parent="Main" unique_id=1727988491]
 layout_mode = 1

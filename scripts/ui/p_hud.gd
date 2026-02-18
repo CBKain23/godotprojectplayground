@@ -12,6 +12,12 @@ class_name Player_HUD extends CanvasLayer
 ##Reference to the YouWin Label node
 @onready var youWin : Label = %YouWinText
 
+func turnOffHUD():
+	
+	if get_tree().paused == true:
+		visible = false
+	else:
+		visible = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -27,7 +27,7 @@ func endLevel(player : Character):
 	
 	#Delay the scene change
 	await get_tree().create_timer(5.0).timeout
-	get_tree().change_scene_to_packed(Level.tryAgainMenu)
+	get_tree().change_scene_to_packed(Menu.tryAgainMenu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

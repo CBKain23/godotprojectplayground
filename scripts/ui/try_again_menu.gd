@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 #Return the main menu
 func _on_yes_pressed() -> void:
-	get_tree().change_scene_to_packed(Level.mainMenuScene)
+	get_tree().change_scene_to_packed(Menu.mainMenu)
 
 
 #Quit the game

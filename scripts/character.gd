@@ -5,6 +5,9 @@ class_name Character extends CharacterBody2D
 @export var game_manager : GameManager
 @export var player_controller : Player_Controller
 
+##The reference variable to the Player's HUD
+@onready var hud : CanvasLayer = %P_HUD
+
 var gameManager : GameManager
 
 func _ready() -> void:

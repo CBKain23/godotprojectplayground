@@ -86,10 +86,11 @@ grow_vertical = 2
 [node name="YouWinText" type="Label" parent="MainCanvas/YouWin" unique_id=578162155]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -68.0
-offset_top = -8.0
-offset_right = 100.0
-offset_bottom = 37.0
+offset_left = -84.0
+offset_top = -23.0
+offset_right = 84.0
+offset_bottom = 22.0
+pivot_offset = Vector2(83.845, 22.97)
 text = "YOU WIN!!!"
 label_settings = SubResource("LabelSettings_uuel0")
 horizontal_alignment = 1
