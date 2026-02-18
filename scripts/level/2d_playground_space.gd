@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var manager : Game_Manager
+
+@export var manager : GameManager
 
 @onready var main : Control = %Main
 # Called when the node enters the scene tree for the first time.

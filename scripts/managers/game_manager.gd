@@ -1,10 +1,13 @@
 class_name Game_Manager extends Node
 
 
-#The sound reference
+##The referenece variable from the Sound class
 @export var sound : Sound
+
+##The reference variable from the Points class
 var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()
 
+##The boolean variable to check to see if the player character is alive or not
 var isPlayerAlive : bool = true
 
 

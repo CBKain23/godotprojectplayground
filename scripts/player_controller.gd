@@ -2,7 +2,10 @@ class_name Player_Controller extends Node
 
 
 
+##The amount of times the player character has jumped
 var jumpCount : int = 0
+
+##How many times the player character can jump
 var jumpLimit : int = 1
 
 ##The player character reference
@@ -15,10 +18,10 @@ var jumpLimit : int = 1
 @export var maxSpeedFloat = 500.0
 
 ##The speed at which the player's speed slows down on the ground.
-@export var groundslowFloat : float = 35.0
+@export var groundSlowFloat : float = 35.0
 
 ##The speed at which the player's speed slows down in the air.
-@export var airslowFloat : float = 5.0
+@export var airSlowFloat : float = 5.0
 
 ##The jump height of the player character
 @export var jumpFloat : float = -1.0 * 500.0
@@ -57,23 +60,37 @@ func player_movement():
 	#Create a slow down speed variable so it can be assigned to either slow down variables
 	var slowDownFloat : float
 	
-	#If the player is currently moving
+	#Check to see if the player is inputting a directional button
 	if direction == 1.0:
 		
+		#Add the direction times the Acceleration float variable to the
+		#player's x velocity
 		player.velocity.x += direction * accelerFloat
+		
+		#If the player's x velocity is greater than the MAX Speed float variable
+		#set the player's x velocity to the MAX Speed variable
 		if player.velocity.x > maxSpeedFloat:
 			player.velocity.x = maxSpeedFloat
+	
+	#Similar to the code above, but for the opposite directional input
 	elif direction == -1.0:
 		player.velocity.x -= -direction * accelerFloat
 		
 		if player.velocity.x < -maxSpeedFloat:
 			player.velocity.x = -maxSpeedFloat
+	
+	#If the player isn't pressing any directional buttons, slow down the player's
+	#speed.
 	else:
 		
+		#Check to see if the player is on the floor, if so, then set slowDownFloat
+		#variable to groundSlowFloat
 		if player.is_on_floor():
-			slowDownFloat = groundslowFloat
+			slowDownFloat = groundSlowFloat
+		
+		#If in the air, set the slowDownFloat to airSlowFlat
 		else:
-			slowDownFloat = airslowFloat
+			slowDownFloat = airSlowFloat
 		
 		#Apply the slowDown variable to the player's velocity
 		player.velocity.x = move_toward(player.velocity.x, 0, slowDownFloat)
@@ -87,15 +104,31 @@ func player_movement():
 
 ##Gives the player character the ability to jump
 func jump():
+	
+	#Check to see if the player has inputted the jump command while the player character
+	#is on the ground
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+		
+		#Set the player's y velocity to the jumpFloat variable
 		player.velocity.y = jumpFloat
+		
+		#Play the jump SFX from the game manager's sound variable
 		player.game_manager.sound.playSFX(player.game_manager.sound.jump)
 		
+		#Increment the jumpCount integer value by 1
 		jumpCount += 1
 	
+	#Check to see if the player has inputted the jump command again while the player character 
+	#is in the air
 	if Input.is_action_just_pressed("jump") and not hasDoubleJumped and not player.is_on_floor():
+		
+		#Set the player's y velocity to doubleJumpFloat
 		player.velocity.y = doubleJumpFloat
+		
+		#Play the second jump SFX from the game manager's sound variable
 		player.game_manager.sound.playSFX(player.game_manager.sound.jump2)
+		
+		#set the Has Double Jumped boolean variable to true
 		hasDoubleJumped = true
 	
 
