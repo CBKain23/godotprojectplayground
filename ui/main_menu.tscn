@@ -12,7 +12,7 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_t7e0r")
 manager = NodePath("GameManager")
 month = 2
-day = 16
+day = 17
 
 [node name="MainControl" type="Control" parent="." unique_id=1976934822]
 layout_mode = 3
@@ -85,7 +85,7 @@ text = "Build Date"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Button" type="Button" parent="MainControl" unique_id=1500249269]
+[node name="Option" type="Button" parent="MainControl" unique_id=1500249269]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
