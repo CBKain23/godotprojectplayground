@@ -48,3 +48,7 @@ func _on_start_game_button_down() -> void:
 
 func _on_exit_game_button_down() -> void:
 	manager.sound.buttonClick()
+
+
+func _on_option_button_down() -> void:
+	manager.sound.buttonClick()

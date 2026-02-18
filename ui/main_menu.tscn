@@ -107,3 +107,4 @@ text = "Option"
 [connection signal="pressed" from="MainControl/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="button_down" from="MainControl/ExitGame" to="." method="_on_exit_game_button_down"]
 [connection signal="pressed" from="MainControl/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="button_down" from="MainControl/Option" to="." method="_on_option_button_down"]
