@@ -1,5 +1,6 @@
 class_name End_Game extends Area2D
 
+#The collision node that will be disabled when the player gets to the end level flag
 @onready var collision : CollisionShape2D = %Collision
 
 
@@ -9,15 +10,23 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func endLevel(player : Character):
+	
+	##Disable the collision node
 	collision.disabled = true
+	
+	#Stop the music
 	player.game_manager.sound.stopMusic()
+	
+	#Display the 'You Win' text onto the screen
 	player.get_node("%P_HUD").changeWinTextVisibility()
+	
+	#Play the 'You Win' and 'Win Jingle' SFX
 	player.game_manager.sound.playSFX(player.game_manager.sound.win)
 	player.game_manager.sound.playSFX(player.game_manager.sound.winJingle)
-	#await get_tree().creater_timer(0.5).timeout
 	player.game_manager.sound.playSFX(player.game_manager.sound.youWin)
+	
+	#Delay the scene change
 	await get_tree().create_timer(5.0).timeout
-	#get_tree().change_scene_to_packed(player.game_manager.level.mainMenuScene)
 	get_tree().change_scene_to_packed(Level.tryAgainMenu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

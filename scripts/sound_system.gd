@@ -8,6 +8,7 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 
 @export var game_manager : Game_Manager
 
+#AudiostreamPlayers for the SFX and Music
 @onready var coin : AudioStreamPlayer = %CoinPickUpSFX
 @onready var win : AudioStreamPlayer = %WinSFX
 @onready var jump : AudioStreamPlayer = %Jump1SFX
@@ -25,8 +26,8 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 @export_range(-80.0, 24.0) var basicLevelVol : float = -10.0
 @export_range(-80.0, 24.0) var speakerVol : float 
 
+#The Audiostreamplayers for the players of SFX and music
 @export var speaker : AudioStreamPlayer
-
 @export var SFX : AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,7 @@ func _ready() -> void:
 	#speakerVol = speaker.volume_db
 	pass
 
+##Play the Music
 func playMusic(audio: AudioStreamPlayer):
 	
 	match audio:
@@ -55,13 +57,15 @@ func playMusic(audio: AudioStreamPlayer):
 			speaker.play()
 	
 
-
+##Pause the music
 func pauseMusic():
 	speaker.stream_paused = true
 
+##Unpause the music
 func unpauseMusic():
 	speaker.stream_paused = false
 
+##Stop the music
 func stopMusic():
 	
 	#match audio:
@@ -76,7 +80,7 @@ func stopMusic():
 	
 
 
-
+##Play the SFX
 func playSFX(audio: AudioStreamPlayer):
 	
 	match audio:
@@ -112,6 +116,7 @@ func playSFX(audio: AudioStreamPlayer):
 			
 	
 
+##Play the button click SFX
 func buttonClick():
 	playSFX(click)
 

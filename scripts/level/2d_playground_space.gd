@@ -8,6 +8,8 @@ func _ready() -> void:
 	
 	
 	#GameManager.sound.playMusic(GameManager.sound.BasicLevel)
+	
+	#Play the music for the basic level
 	manager.sound.playMusic(manager.sound.BasicLevel)
 
 

@@ -32,5 +32,4 @@ func _on_yes_button_down() -> void:
 
 func _on_no_button_down() -> void:
 	manager.sound.buttonClick()
-	#GameManager.soundSystem.buttonClick()
-	#Sound.buttonClick()
+	

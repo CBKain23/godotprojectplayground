@@ -18,16 +18,6 @@ enum LevelSelect {BaseLevel, TestLevel, MainMenuLevel, TryAgain}
 	LevelSelect.TryAgain : tryAgainMenu,
 	}
 
-#@export_enum(baseLevel, testLevel, mainMenu) var levelSelect : String
-
-
-#var level_dict = {mainMenu : mainMenuScene, baseLevel : baseLevel, testLevel : testFlagLevel} 
-
-
-#var levelSelected : PackedScene = level_dict[levelSelect]
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

@@ -1,19 +1,12 @@
 class_name Game_Manager extends Node
 
 
+#The sound reference
 @export var sound : Sound
-#var sound : SoundSystem = preload("uid://ckg5dsigg8bue").instantiate()
 var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()
 
-#@onready var menu : Menu
-
-
-var soundSystem : Sound 
-
-@onready var pause : PauseMenu = PauseMenu.new()
 var isPlayerAlive : bool = true
 
-var player_points : int = 0
 
 #func getPlayerCharacter(player : Character):
 	#playerChar = player
@@ -23,6 +16,7 @@ var player_points : int = 0
 func _ready() -> void:
 	pass
 
+##The function for the death of the player
 func player_death(body: Character):
 	body.queue_free()
 	isPlayerAlive = false

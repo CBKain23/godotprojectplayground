@@ -1,8 +1,6 @@
 extends Node2D
 
 
-var game_manager = Game_Manager.new()
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Character) -> void:
 	
-	game_manager.player_death(body)
+	body.game_manager.player_death(body)
 	
