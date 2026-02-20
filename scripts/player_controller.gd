@@ -11,11 +11,22 @@ var jumpLimit : int = 1
 ##The player character reference
 @export var player : Character
 
+##The multipler for the sprint float variable
+@export_range(1.0, 2.0) var sprintMulti : float = 1.5
+
+##The sprint speed for the player character
+#var sprintSpeed : float = maxSpeedFloat * sprintMulti
+
 ##The acceleration float for the player character.
-@export var accelerFloat = 50.0
+@export var accelerFloat : float = 50.0
+
+@onready var sprintAcceler : float = accelerFloat * 1.5
 
 ##The max speed in float for the player character.
-@export var maxSpeedFloat = 500.0
+@export var maxSpeedFloat : float = 500.0
+
+##The max sprint for the player character
+@onready var maxSprintSpeed : float = maxSpeedFloat * sprintMulti
 
 ##The speed at which the player's speed slows down on the ground.
 @export var groundSlowFloat : float = 35.0
@@ -28,7 +39,7 @@ var jumpLimit : int = 1
 
 ##The double jump height of the player character
 @export_range(0.0, 1.0) var doubleJumpPercent : float = 0.8
-var doubleJumpFloat = jumpFloat * doubleJumpPercent
+@onready var doubleJumpFloat = jumpFloat * doubleJumpPercent
 
 ##The velocity.y point in which the player will sense their falling
 ##The point on velocity.y where the player character will change their
@@ -39,17 +50,22 @@ var hasDoubleJumped : bool = false
 
 ##Display the pause menu to the screen
 func pauseGame():
+	
 	#Declare a variable for a boolean variable to check if the player has pressed the
 	#pause command.
 	var pauseGame := Input.is_action_pressed("pause")
 	
 	if pauseGame:
-		get_tree().paused = true
 		Menu.addToScreen(Menu.pauseMenu, get_tree())
+	
 
 ##Reset the hasDoubleJumped boolean to false
 func DoubleJumpReset():
 	hasDoubleJumped = false
+
+##Make the player character move faster
+func sprint():
+	pass
 
 ##Gives the player control over the movement of the player character
 func player_movement():
@@ -57,18 +73,24 @@ func player_movement():
 	#Getting the float variable to represent the player's direction
 	var direction := Input.get_axis("move_left","move_right")
 	
+	#Getting a boolean variable to represent the player inputting 'sprint'
+	var sprinting := Input.is_action_pressed("sprint")
+	
 	#Create a slow down speed variable so it can be assigned to either slow down variables
 	var slowDownFloat : float
 	
 	#Check to see if the player is inputting a directional button
 	if direction == 1.0:
 		
+		if sprinting:
+			pass
+		
 		#Add the direction times the Acceleration float variable to the
 		#player's x velocity
 		player.velocity.x += direction * accelerFloat
 		
-		#If the player's x velocity is greater than the MAX Speed float variable
-		#set the player's x velocity to the MAX Speed variable
+		#If the player's x velocity is greater than the MAX Speed float variable,
+		#set the player's x velocity to the MAX Speed float variable
 		if player.velocity.x > maxSpeedFloat:
 			player.velocity.x = maxSpeedFloat
 	
@@ -105,9 +127,12 @@ func player_movement():
 ##Gives the player character the ability to jump
 func jump():
 	
+	#A reference variable to the player input for 'jump'
+	var jumping = Input.is_action_just_pressed("jump")
+	
 	#Check to see if the player has inputted the jump command while the player character
 	#is on the ground
-	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+	if jumping and player.is_on_floor():
 		
 		#Set the player's y velocity to the jumpFloat variable
 		player.velocity.y = jumpFloat
@@ -120,7 +145,7 @@ func jump():
 	
 	#Check to see if the player has inputted the jump command again while the player character 
 	#is in the air
-	if Input.is_action_just_pressed("jump") and not hasDoubleJumped and not player.is_on_floor():
+	if jumping and not hasDoubleJumped and not player.is_on_floor():
 		
 		#Set the player's y velocity to doubleJumpFloat
 		player.velocity.y = doubleJumpFloat
