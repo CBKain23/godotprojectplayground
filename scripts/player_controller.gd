@@ -20,7 +20,7 @@ var jumpLimit : int = 1
 ##The acceleration float for the player character.
 @export var accelerFloat : float = 50.0
 
-@onready var sprintAcceler : float = accelerFloat * 1.5
+@onready var sprintAcceler : float = accelerFloat * 1.4
 
 ##The max speed in float for the player character.
 @export var maxSpeedFloat : float = 500.0
@@ -82,24 +82,34 @@ func player_movement():
 	#Check to see if the player is inputting a directional button
 	if direction == 1.0:
 		
+		#If the player inputted the sprint command
 		if sprinting:
-			pass
-		
-		#Add the direction times the Acceleration float variable to the
-		#player's x velocity
-		player.velocity.x += direction * accelerFloat
-		
-		#If the player's x velocity is greater than the MAX Speed float variable,
-		#set the player's x velocity to the MAX Speed float variable
-		if player.velocity.x > maxSpeedFloat:
-			player.velocity.x = maxSpeedFloat
+			player.velocity.x += direction * sprintAcceler
+			
+			if player.velocity.x > maxSprintSpeed:
+				player.velocity.x = maxSprintSpeed
+		else:
+			#Add the direction times the Acceleration float variable to the
+			#player's x velocity
+			player.velocity.x += direction * accelerFloat
+			#If the player's x velocity is greater than the MAX Speed float variable,
+			#set the player's x velocity to the MAX Speed float variable
+			if player.velocity.x > maxSpeedFloat:
+				player.velocity.x = maxSpeedFloat
 	
 	#Similar to the code above, but for the opposite directional input
 	elif direction == -1.0:
-		player.velocity.x -= -direction * accelerFloat
 		
-		if player.velocity.x < -maxSpeedFloat:
-			player.velocity.x = -maxSpeedFloat
+		if sprinting:
+			player.velocity.x -= -direction * sprintAcceler
+			
+			if player.velocity.x < -maxSprintSpeed:
+				player.velocity.x = -maxSprintSpeed
+		else:
+			
+			player.velocity.x -= -direction * accelerFloat
+			if player.velocity.x < -maxSpeedFloat:
+				player.velocity.x = -maxSpeedFloat
 	
 	#If the player isn't pressing any directional buttons, slow down the player's
 	#speed.
