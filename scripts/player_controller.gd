@@ -57,6 +57,8 @@ func pauseGame():
 	
 	if pauseGame:
 		Menu.addToScreen(Menu.pauseMenu, get_tree())
+		#Menu.isPauseMenuUp = true
+	
 	
 
 ##Reset the hasDoubleJumped boolean to false
@@ -179,14 +181,18 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	jump()
-	
-	if player.is_on_floor():
-		DoubleJumpReset()
+	#Check to see if the game was paused, if so, pause the player's movement
+	if get_tree().paused == false:
 		
-		jumpCount = 0
+		jump()
+		
 	
-	player_movement()
+		if player.is_on_floor():
+			DoubleJumpReset()
+		
+			jumpCount = 0
 	
-	player.move_and_slide()
+		player_movement()
+	
+		player.move_and_slide()
 	

@@ -17,6 +17,8 @@ var menu_dict : Dictionary[MenuSelect, PackedScene] = {MenuSelect.MainSelect: ma
 MenuSelect.TryAgain : tryAgainMenu,
 MenuSelect.Pause : pauseMenu, }
 
+var isPauseMenuUp = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

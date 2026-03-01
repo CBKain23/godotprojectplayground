@@ -5,3 +5,10 @@
 [node name="PlayerController" type="Node" unique_id=1825627395]
 process_mode = 3
 script = ExtResource("1_55kn1")
+sprintMulti = null
+accelerFloat = null
+maxSpeedFloat = null
+groundSlowFloat = null
+airSlowFloat = null
+jumpFloat = null
+doubleJumpPercent = null

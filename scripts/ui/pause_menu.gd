@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 #Unpause the game and remove the pause menu from the screen.
 func _on_resume_button_pressed() -> void:
 	unPauseGame()
+	#Menu.isPauseMenuUp == false
 	Menu.removeFromScreen(self)
 
 #Change the scene to the Main Menu, Unpause the game, and remove the pause menu from the screen
