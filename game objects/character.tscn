@@ -98,6 +98,13 @@ zoom = Vector2(0.9, 0.9)
 unique_name_in_owner = true
 process_mode = 0
 player = NodePath("../..")
+sprintMulti = 1.5
+accelerFloat = 50.0
+maxSpeedFloat = 500.0
+groundSlowFloat = 35.0
+airSlowFloat = 5.0
+jumpFloat = -500.0
+doubleJumpPercent = 0.8
 
 [node name="CharacterAnimation" parent="Components" unique_id=1852894487 node_paths=PackedStringArray("player") instance=ExtResource("9_vbq64")]
 unique_name_in_owner = true

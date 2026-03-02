@@ -11,8 +11,8 @@ outline_color = Color(0, 0, 0, 1)
 [node name="MainMenu" type="CanvasLayer" unique_id=1066006091 node_paths=PackedStringArray("manager")]
 script = ExtResource("1_t7e0r")
 manager = NodePath("GameManager")
-month = 2
-day = 20
+month = 3
+day = 1
 
 [node name="MainControl" type="Control" parent="." unique_id=1976934822]
 layout_mode = 3

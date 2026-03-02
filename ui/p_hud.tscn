@@ -10,6 +10,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="P_HUD" type="CanvasLayer" unique_id=913987814]
+process_mode = 3
 script = ExtResource("1_xo6hs")
 
 [node name="MainCanvas" type="Control" parent="." unique_id=1876467086]

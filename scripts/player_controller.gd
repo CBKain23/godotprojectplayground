@@ -53,12 +53,11 @@ func pauseGame():
 	
 	#Declare a variable for a boolean variable to check if the player has pressed the
 	#pause command.
-	var pauseGame := Input.is_action_pressed("pause")
+	var pauseGame := Input.is_action_just_pressed("pause")
 	
-	if pauseGame:
-		Menu.addToScreen(Menu.pauseMenu, get_tree())
-		#Menu.isPauseMenuUp = true
-	
+	if pauseGame and get_tree().paused == false:
+		
+		Menu.addPauseScreen(get_tree())
 	
 
 ##Reset the hasDoubleJumped boolean to false
@@ -178,6 +177,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	pauseGame()
+	
 
 func _physics_process(delta: float) -> void:
 	
