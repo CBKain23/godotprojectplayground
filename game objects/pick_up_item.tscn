@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dgs3e7lxl54qq"]
+
+[ext_resource type="Script" uid="uid://caf1uaq878lge" path="res://scripts/pick_up_item.gd" id="1_sbbs4"]
+
+[node name="PickUpItem" type="Area2D" unique_id=436550271]
+script = ExtResource("1_sbbs4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

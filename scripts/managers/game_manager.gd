@@ -2,7 +2,7 @@ class_name Game_Manager extends Node
 
 
 ##The referenece variable from the Sound class
-@export var sound : Sound
+@export var sound : Sound = preload("uid://ckg5dsigg8bue").instantiate()
 
 ##The reference variable from the Points class
 var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()

@@ -10,4 +10,5 @@ sound = NodePath("SoundSystem")
 
 [node name="PointSystem" parent="." unique_id=711780399 instance=ExtResource("3_17rfg")]
 
-[node name="SoundSystem" parent="." unique_id=1675318178 instance=ExtResource("3_76e68")]
+[node name="SoundSystem" parent="." unique_id=1675318178 node_paths=PackedStringArray("game_manager") instance=ExtResource("3_76e68")]
+game_manager = NodePath("..")
