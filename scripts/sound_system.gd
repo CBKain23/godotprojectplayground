@@ -20,8 +20,19 @@ var music_set = {AudioStreamPlayer: MainMenuMusic}
 @onready var BasicLevel : AudioStreamPlayer  = %"2DBasicLevelMusic"
 
 #AudioStream version of this method
-@export var mainMenuStream : AudioStream
-@export var basicLevelStream : AudioStream
+var mainMenuStream : AudioStream = preload("uid://7yys7eh5afp4")
+var basicLevelStream : AudioStream = preload("uid://bor7xooyli1sf")
+var coinStream : AudioStream = preload("uid://d2ks5ipt2hy26")
+var winStream : AudioStream = preload("uid://b6pt8ss5h8ql6")
+var jumpStream : AudioStream = preload("uid://c5x7cvmna3sij")
+var jump2Stream : AudioStream = preload("uid://bckg2g68pevc0")
+var youWinStream : AudioStream = preload("uid://bt27bwri1v6x7")
+var winJingleStream : AudioStream = preload("uid://dv1uo65p42bq5")
+var clickStream : AudioStream = preload("uid://by2ahj7su4ynt")
+
+
+
+
 @export_range(-80.0, 24.0) var mainMenuVol : float = -15.0
 @export_range(-80.0, 24.0) var basicLevelVol : float = -10.0
 @export_range(-80.0, 24.0) var speakerVol : float 
@@ -46,6 +57,8 @@ func playMusic(audio: AudioStreamPlayer):
 			#speaker.volume_db = mainMenuVol
 			
 			speaker = MainMenuMusic
+			#speaker.stream = mainMenuStream
+			#speaker
 			speaker.play()
 			
 		BasicLevel:
@@ -54,6 +67,7 @@ func playMusic(audio: AudioStreamPlayer):
 			#speaker.volume_db = basicLevelVol
 			
 			speaker = BasicLevel
+			#speaker.stream = basicLevelStream
 			speaker.play()
 	
 

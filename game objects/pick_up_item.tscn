@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://caf1uaq878lge" path="res://scripts/pick_up_item.gd" id="1_sbbs4"]
 
 [node name="PickUpItem" type="Area2D" unique_id=436550271]
+collision_layer = 16
+collision_mask = 64
 script = ExtResource("1_sbbs4")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

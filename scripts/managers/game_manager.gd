@@ -5,11 +5,12 @@ class_name Game_Manager extends Node
 @export var sound : Sound = preload("uid://ckg5dsigg8bue").instantiate()
 
 ##The reference variable from the Points class
-var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()
+@onready var points : Points = preload("uid://ddyxt1rwmgkuk").instantiate()
 
 ##The boolean variable to check to see if the player character is alive or not
 var isPlayerAlive : bool = true
 
+@onready var pausable : bool = true
 
 #func getPlayerCharacter(player : Character):
 	#playerChar = player

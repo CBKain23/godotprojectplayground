@@ -51,13 +51,14 @@ var hasDoubleJumped : bool = false
 ##Display the pause menu to the screen
 func pauseGame():
 	
-	#Declare a variable for a boolean variable to check if the player has pressed the
-	#pause command.
-	var pauseGame := Input.is_action_just_pressed("pause")
+	if GameManager.pausable == true:
+		#Declare a variable for a boolean variable to check if the player has pressed the
+		#pause command.
+		var pauseGame := Input.is_action_just_pressed("pause")
 	
-	if pauseGame and get_tree().paused == false:
+		if pauseGame and get_tree().paused == false:
 		
-		Menu.addPauseScreen(get_tree())
+			Menu.addPauseScreen(get_tree())
 	
 
 ##Reset the hasDoubleJumped boolean to false

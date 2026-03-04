@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://boemyn716y6ty"]
+[gd_scene format=3 uid="uid://bqak00o8tqldv"]
 
-[ext_resource type="Script" uid="uid://caf1uaq878lge" path="res://scripts/pick_up_item.gd" id="1_cku0y"]
 [ext_resource type="Texture2D" uid="uid://b1or708epd0gy" path="res://images/items/coinGold.png" id="1_cuc71"]
+[ext_resource type="PackedScene" uid="uid://dgs3e7lxl54qq" path="res://game objects/pick_up_item.tscn" id="2_cku0y"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e6o3m"]
-radius = 40.792156
+[sub_resource type="CircleShape2D" id="CircleShape2D_cku0y"]
+radius = 48.6621
 
-[node name="Coin" type="Area2D" unique_id=1459445045]
-script = ExtResource("1_cku0y")
-metadata/_custom_type_script = "uid://caf1uaq878lge"
+[node name="Coin" type="StaticBody2D" unique_id=1174116411]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200115121]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2047173696]
+scale = Vector2(1.4142857, 1.4142857)
 texture = ExtResource("1_cuc71")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=755066374]
-shape = SubResource("CircleShape2D_e6o3m")
+[node name="PickUpItem" parent="." unique_id=436550271 instance=ExtResource("2_cku0y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpItem" unique_id=793601568]
+shape = SubResource("CircleShape2D_cku0y")

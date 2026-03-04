@@ -24,4 +24,4 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.get_collision_layer_value(7) == true:
 		pickUpItem(pickUp)
-		queue_free()
+		get_parent().queue_free()

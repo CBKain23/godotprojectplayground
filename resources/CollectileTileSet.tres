@@ -1,12 +1,14 @@
 [gd_resource type="TileSet" format=3 uid="uid://spa4o6qc6kci"]
 
-[ext_resource type="PackedScene" uid="uid://boemyn716y6ty" path="res://game objects/coin.tscn" id="1_iivcq"]
+[ext_resource type="PackedScene" uid="uid://bqak00o8tqldv" path="res://game objects/coin.tscn" id="1_iivcq"]
 [ext_resource type="PackedScene" uid="uid://k1bujw4r58y7" path="res://game objects/coinOld.tscn" id="1_ixkla"]
+[ext_resource type="PackedScene" uid="uid://boemyn716y6ty" path="res://game objects/coinTooOld.tscn" id="2_ixkla"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m02ir"]
 resource_name = "coin"
 scenes/1/scene = ExtResource("1_ixkla")
-scenes/2/scene = ExtResource("1_iivcq")
+scenes/2/scene = ExtResource("2_ixkla")
+scenes/3/scene = ExtResource("1_iivcq")
 
 [resource]
 tile_size = Vector2i(70, 70)

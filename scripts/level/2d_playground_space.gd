@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 	#Play the music for the basic level
 	manager.sound.playMusic(manager.sound.BasicLevel)
+	#GameManager.sound.playMusic(GameManager.sound.BasicLevel)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

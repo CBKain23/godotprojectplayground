@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func endLevel(player : Character):
 	
+	GameManager.pausable = false
 	##Disable the collision node
 	collision.disabled = true
 	
@@ -27,6 +28,7 @@ func endLevel(player : Character):
 	
 	#Delay the scene change
 	await get_tree().create_timer(5.0).timeout
+	GameManager.pausable = true
 	get_tree().change_scene_to_packed(Menu.tryAgainMenu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
